@@ -18,7 +18,7 @@ if [ ! -d $1 ]; then
 	echo -n "Directory $1 doesn't exist. Create it now? (y/N) "
 	read create
 	case $create in
-		[yY]*) ${PREFIX} mkdir $1 ;;
+		[yY]*) ${PREFIX} mkdir -p $1 ;;
 		*) exit 1 ;;
 	esac
 fi
