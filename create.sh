@@ -23,7 +23,7 @@ if [ ! -d $1 ]; then
 	esac
 fi
 
-olddir=$(pwd)
+pushd $(pwd)
 cd $1
 
 url="http://distfiles.gentoo.org/releases/amd64/autobuilds/$(curl http://distfiles.gentoo.org/releases/amd64/autobuilds/latest-stage3-amd64.txt | tail -n1 | cut -d' ' -f 1)"
@@ -33,7 +33,7 @@ ${PREFIX} wget http://distfiles.gentoo.org/snapshots/portage-latest.tar.bz2
 ${PREFIX} tar xvjpf $filename -C $1
 ${PREFIX} tar xvjf portage-latest.tar.bz2 -C $1/usr
 
-cd $olddir
+popd
 
 ${PREFIX} mount -o rbind /dev $1/dev
 ${PREFIX} mount -t proc none $1/proc
