@@ -2,7 +2,7 @@
 ---------------
 
 ### create.sh
-Usage: ./create.sh <directory> [make.conf]
+Usage: ./create.sh \<directory\> [make.conf]
 
 ### destroy.sh
-Usage: ./destro.sh <directory>
+Usage: ./destroy.sh \<directory\>
